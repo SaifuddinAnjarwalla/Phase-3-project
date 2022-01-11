@@ -37,14 +37,24 @@ Customer churn is the loss of clients or customers. Predicting churn can help th
 * churn: true if the user terminated the contract, otherwise false
 ![image](https://user-images.githubusercontent.com/59200380/148935235-c5ae7d95-8395-4fc2-8def-a8e49f11f5b9.png)
 
+1. 21 different variables 
+2. Key Dependent variable: 
+     ‘Churn’ – 1(customer has churned), 0(customer has not churned)
+3. Independent variable examples: 
+       International plan: true if the user has the international plan, otherwise false
+       Total day minutes: total number of minutes the user has been in calls during the day
+       Total eve calls: total number of calls the user has done during the evening
+       Customer service calls: number of customer service calls the user has done
 
 
+### To understand the data i then did some EDA to futher understand the data. 
+there was not much cleaning to be done:
+1. I dropped a few columns that would prove not to be important 
+2. I onhotencoded some categorical values
+3. I made a few graphs to visualise the data 
+![image](https://user-images.githubusercontent.com/59200380/148936324-89ffac25-12b2-46b2-a755-c605d207c4bd.png)
+![image](https://user-images.githubusercontent.com/59200380/148936377-b551bcd1-5326-4721-9107-f638c387c75c.png)
 
-I then did some EDA to futher understand the data. 
-1. there was not much cleaning to be done
-2. I dropped a few columns that would prove not to be important 
-3. I onhotencoded some categorical values
-4. I made a few graphs to visualise the data 
 
 I broke the dataframe into training and testing data. I added a classweight to address the imbalance of the data.
 
