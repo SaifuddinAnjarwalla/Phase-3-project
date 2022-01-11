@@ -1,10 +1,10 @@
 # Phase-3-project
 
 ## Outline of this repo
-Contained in this repo we have 3 files I have
+Contained in this repo I have 3 files I have
 1. phase3_final - this is the jupyter notebook with the whole analysis of the problem I was adressing 
 2. Mod3_finalproject_PPP1 - this is a non-technical presentation of the problem I was adressing
-3. syriatel_churn.csv - this is the data we were using for this project 
+3. syriatel_churn.csv - this is the data I used for this project 
 
 ## phase3_final
 ###I sarted of by outlining the problem and our goal for this project:
@@ -56,6 +56,8 @@ there was not much cleaning to be done:
 ![image](https://user-images.githubusercontent.com/59200380/148936377-b551bcd1-5326-4721-9107-f638c387c75c.png)
 
 
+### The model
+
 I broke the dataframe into training and testing data. I added a classweight to address the imbalance of the data.
 
 I ran various models on the data:
@@ -64,9 +66,65 @@ I ran various models on the data:
 3. Random forest classifier
 4. K Nearest neighbours
 5. XGBoost
-We evaluated the models based on the PR AUC metric. We decided to choose this metric as after reading we found that it works best for models where the 1 is more important than the o and where there is a class weight imbalance (when the 1 is more important than the 0)
+I evaluated the models based on the PR AUC metric. I decided to choose this metric as after reading I found that it works best for models where the 1 is more important than the o and where there is a class weight imbalance (when the 1 is more important than the 0)
 
-Since we foudn that XGBoost model has the highest PR AUC we decided to optimise on this. 
-We preformed a grid search.
-We looked at the feature importance graph. 
+Since I foudn that XGBoost model has the highest PR AUC I decided to optimise on this. 
+I preformed a grid search to find the optimal parameters. I found that our model had an PR AUC score of 0.84
+
+Below is the confusion matrix and classification report of our model.
+![image](https://user-images.githubusercontent.com/59200380/148992027-a1994fca-ad54-447b-9fb1-e3bd64d6f98c.png)
+
+
+Positive = churns, negative = doesn't churn
+
+36 - a customer churns and the model predict that it churns - True positive
+
+2.8e+02 - a customer doesnt churn and the model predict that it doesnt churns - true negative 
+
+4 - a customer churns and the model predicrt that it doesnt churn - flase positive
+
+12 - a customer doenst churn and the model predict that it churn - false negative
+
+![image](https://user-images.githubusercontent.com/59200380/148992155-cb45632a-6f86-48b6-bfdf-8b67adafbfaf.png)
+Precision - ability of a classifier not to label an instance positive that is actually negative and vice versa (Precision = TP/(TP + FP))
+
+Recall - ability of a classifier to find all positive instances. For each class it is defined as the ratio of true positives to the sum of true positives and false negatives.
+
+F1 score - weighted harmonic mean of precision and recall such that the best score is 1.0 and the worst is 0.0.
+
+macro avg - function to compute f1 for each label, and returns the average without considering the proportion for each label in the dataset. 
+
+weighted avg - says the function to compute f1 for each label, and returns the average considering the proportion for each label in the dataset
+
+### How can the telco identify churn 
+
+I created a feature importance graph from our model.
+![image](https://user-images.githubusercontent.com/59200380/148993001-4d5a7b5e-f945-4e6d-a88e-90b877ec09dd.png)
+
+1. High numbers of Customer service calls are associated with churn. 
+![image](https://user-images.githubusercontent.com/59200380/148993087-0afb3460-2a66-47c6-a6bc-ea873ce4fcd1.png)
+0 service calls = 13% churn 
+4 service calls = 46% churn 
+8 and 9 service calls = 100% churn 
+The larger the number of service calls a customer has to make the higher the chance of the customer curning.
+
+2. Customers with an International Plan seem to churn.
+![image](https://user-images.githubusercontent.com/59200380/148993265-ead97e89-f828-47fb-b5c8-c717fe1f67a6.png)
+No international plan = 11% churn 
+Yes international plan = 42% churn 
+Customers enrolled into an international plan seem to curn more than customers who are not.
+
+
+### Conclusion
+
+After analyzing the data I created a model to predict churn.
+
+I tuned our model to get a PR AUC of 0.84.
+
+The Telco can use this model in the future to predict which of its customer will churn.
+
+I found a number of features that were important to look at to identify churn. To name a few these were:
+1. Total time spent on the phone (day, night and evening minutes)
+2. Whether the customer has an International plan
+3. How many customer service calls a customer makes
 
