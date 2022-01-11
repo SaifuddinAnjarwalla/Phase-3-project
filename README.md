@@ -7,7 +7,7 @@ Contained in this repo I have 3 files I have
 3. syriatel_churn.csv - this is the data I used for this project 
 
 ## phase3_final
-###I sarted of by outlining the problem and our goal for this project:
+### The problem and our goal for this project:
 
 Our goal is to create a model to predic churn and alert the company on how to identify churn.
 
@@ -85,6 +85,8 @@ Positive = churns, negative = doesn't churn
 
 12 - a customer doenst churn and the model predict that it churn - false negative
 
+
+
 ![image](https://user-images.githubusercontent.com/59200380/148992155-cb45632a-6f86-48b6-bfdf-8b67adafbfaf.png)
 Precision - ability of a classifier not to label an instance positive that is actually negative and vice versa (Precision = TP/(TP + FP))
 
@@ -96,6 +98,8 @@ macro avg - function to compute f1 for each label, and returns the average witho
 
 weighted avg - says the function to compute f1 for each label, and returns the average considering the proportion for each label in the dataset
 
+
+
 ### How can the telco identify churn 
 
 I created a feature importance graph from our model.
@@ -103,16 +107,24 @@ I created a feature importance graph from our model.
 
 1. High numbers of Customer service calls are associated with churn. 
 ![image](https://user-images.githubusercontent.com/59200380/148993087-0afb3460-2a66-47c6-a6bc-ea873ce4fcd1.png)
+
 0 service calls = 13% churn 
+
 4 service calls = 46% churn 
+
 8 and 9 service calls = 100% churn 
+
 The larger the number of service calls a customer has to make the higher the chance of the customer curning.
 
 2. Customers with an International Plan seem to churn.
 ![image](https://user-images.githubusercontent.com/59200380/148993265-ead97e89-f828-47fb-b5c8-c717fe1f67a6.png)
+
 No international plan = 11% churn 
+
 Yes international plan = 42% churn 
+
 Customers enrolled into an international plan seem to curn more than customers who are not.
+
 
 
 ### Conclusion
