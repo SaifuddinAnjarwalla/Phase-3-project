@@ -35,6 +35,12 @@ Customer churn is the loss of clients or customers. Predicting churn can help th
 * total intl charge: total amount of money the user was charged by the Telecom company for international calls
 * customer service calls: number of customer service calls the user has done
 * churn: true if the user terminated the contract, otherwise false
+
+[![test](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/datapicture.png)]
+
+
+
+
 ![image](https://user-images.githubusercontent.com/59200380/148935235-c5ae7d95-8395-4fc2-8def-a8e49f11f5b9.png)
 
 1. 21 different variables 
