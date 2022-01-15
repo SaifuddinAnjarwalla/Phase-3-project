@@ -106,7 +106,7 @@ weighted avg - says the function to compute f1 for each label, and returns the a
 ### How can the telco identify churn 
 
 I created a feature importance graph from our model.
-![featureimp](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/featureimp.png)
+![featureimp2](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/featureimp.png)
 
 1. High numbers of Customer service calls are associated with churn. 
 ![csccalls](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/csc_calls.png)
