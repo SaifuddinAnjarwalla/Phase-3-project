@@ -36,12 +36,8 @@ Customer churn is the loss of clients or customers. Predicting churn can help th
 * customer service calls: number of customer service calls the user has done
 * churn: true if the user terminated the contract, otherwise false
 
-[![test](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/datapicture.png)]
+![test](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/datapicture.png)
 
-
-
-
-![image](https://user-images.githubusercontent.com/59200380/148935235-c5ae7d95-8395-4fc2-8def-a8e49f11f5b9.png)
 
 1. 21 different variables 
 2. Key Dependent variable: 
@@ -58,8 +54,10 @@ there was not much cleaning to be done:
 1. I dropped a few columns that would prove not to be important 
 2. I onhotencoded some categorical values
 3. I made a few graphs to visualise the data 
-![image](https://user-images.githubusercontent.com/59200380/148936324-89ffac25-12b2-46b2-a755-c605d207c4bd.png)
-![image](https://user-images.githubusercontent.com/59200380/148936377-b551bcd1-5326-4721-9107-f638c387c75c.png)
+![churnvnonchurn](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/churnvsnonchurn.png)
+
+![churnbystate](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/churnbystate.png)
+
 
 
 ### The model
@@ -78,8 +76,7 @@ Since I foudn that XGBoost model has the highest PR AUC I decided to optimise on
 I preformed a grid search to find the optimal parameters. I found that our model had an PR AUC score of 0.84
 
 Below is the confusion matrix and classification report of our model.
-![image](https://user-images.githubusercontent.com/59200380/148992027-a1994fca-ad54-447b-9fb1-e3bd64d6f98c.png)
-
+![matrix](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/matrix.png)
 
 Positive = churns, negative = doesn't churn
 
@@ -91,10 +88,8 @@ Positive = churns, negative = doesn't churn
 
 12 - a customer doenst churn and the model predict that it churn - false negative
 
+![classification](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/classificationreport.png)
 
-
-![image](https://user-images.githubusercontent.com/59200380/148992155-cb45632a-6f86-48b6-bfdf-8b67adafbfaf.png)
-https://github.com/SaifuddinAnjarwalla/Phase-3-project/tree/main/phase3#:~:text=now-,datapicture.png,-Add%20files%20via
 
 Precision - ability of a classifier not to label an instance positive that is actually negative and vice versa (Precision = TP/(TP + FP))
 
@@ -111,10 +106,10 @@ weighted avg - says the function to compute f1 for each label, and returns the a
 ### How can the telco identify churn 
 
 I created a feature importance graph from our model.
-![image](https://user-images.githubusercontent.com/59200380/148993001-4d5a7b5e-f945-4e6d-a88e-90b877ec09dd.png)
+![featureimp](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/featureimp.png)
 
 1. High numbers of Customer service calls are associated with churn. 
-![image](https://user-images.githubusercontent.com/59200380/148993087-0afb3460-2a66-47c6-a6bc-ea873ce4fcd1.png)
+![csccalls](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/csc_calls.png)
 
 0 service calls = 13% churn 
 
@@ -125,7 +120,7 @@ I created a feature importance graph from our model.
 The larger the number of service calls a customer has to make the higher the chance of the customer curning.
 
 2. Customers with an International Plan seem to churn.
-![image](https://user-images.githubusercontent.com/59200380/148993265-ead97e89-f828-47fb-b5c8-c717fe1f67a6.png)
+![internationalplan](https://github.com/SaifuddinAnjarwalla/Phase-3-project/blob/main/phase3/international_plan.png)
 
 No international plan = 11% churn 
 
