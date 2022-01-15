@@ -88,6 +88,8 @@ Positive = churns, negative = doesn't churn
 
 
 ![image](https://user-images.githubusercontent.com/59200380/148992155-cb45632a-6f86-48b6-bfdf-8b67adafbfaf.png)
+https://github.com/SaifuddinAnjarwalla/Phase-3-project/tree/main/phase3#:~:text=now-,datapicture.png,-Add%20files%20via
+
 Precision - ability of a classifier not to label an instance positive that is actually negative and vice versa (Precision = TP/(TP + FP))
 
 Recall - ability of a classifier to find all positive instances. For each class it is defined as the ratio of true positives to the sum of true positives and false negatives.
